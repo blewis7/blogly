@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit
+{% endblock %}
+
+{% block content %}
+
+<h1>Create New User</h1>
+<form method='POST'>
+    <input type="text" name='title' placeholder='Enter Title' value='{{post.title}}'>
+    <input type="text" name='content' placeholder='Enter Content' value='{{post.content}}'>
+    <button>Finish Edit</button>
+    <button><a href="/posts/{{post.id}}">Cancel</a></button>
+</form>
+
+
+{% endblock %}
