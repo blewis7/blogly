@@ -10,6 +10,9 @@ Create New Post
 <form method='POST'>
     <input type="text" name='title' placeholder='Enter Title'>
     <input type="text" name='content' placeholder='Enter Post Content'>
+    {% for tag in tags %}
+    <label for="tags">{{tag.name}}</label><input type="checkbox" name="tags" id="tag_{{tag.id}}" value='{{tag.id}}'>
+    {% endfor %}
     <button>Submit Post</button>
 </form>
 <form action="/users/{{user.id}}">

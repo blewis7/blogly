@@ -6,10 +6,17 @@ Edit
 
 {% block content %}
 
-<h1>Create New User</h1>
+<h1>Edit Post</h1>
 <form method='POST'>
     <input type="text" name='title' placeholder='Enter Title' value='{{post.title}}'>
     <input type="text" name='content' placeholder='Enter Content' value='{{post.content}}'>
+    {% for tag in tags %}
+    <label for="tags">{{tag.name}}</label><input type="checkbox" 
+    name="tags" 
+    id="tag_{{tag.id}}" 
+    value='{{tag.id}}' 
+    {% if tag in post.tags %}checked{% endif %}>
+    {% endfor %}
     <button>Finish Edit</button>
     <button><a href="/posts/{{post.id}}">Cancel</a></button>
 </form>
